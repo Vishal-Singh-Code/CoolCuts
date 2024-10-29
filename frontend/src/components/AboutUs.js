@@ -24,7 +24,7 @@ const AboutUs = () => {
           <div className="flex flex-wrap justify-center gap-12">
             {/* Example team member */}
             <div className="w-full sm:w-60 text-center">
-              <img src="/static/Images/barber.png" alt="John Doe" className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105" />
+              <img src="/static/Images/Barber.png" alt="John Doe" className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105" />
               <h3 className="text-xl mt-4 font-medium">John Doe</h3>
               <p className="text-gray-600">Master Barber</p>
             </div>
@@ -34,12 +34,12 @@ const AboutUs = () => {
               <p className="text-gray-600">Senior Stylist</p>
             </div>
             <div className="w-full sm:w-60 text-center">
-              <img src="/static/Images/barber2.png" alt="Mike Johnson" className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105" />
+              <img src="/static/Images/Barber2.png" alt="Mike Johnson" className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105" />
               <h3 className="text-xl mt-4 font-medium">Mike Johnson</h3>
               <p className="text-gray-600">Color Specialist</p>
             </div>
             <div className="w-full sm:w-60 text-center">
-              <img src="/static/Images/barber3.jpg" alt="Sarah Lee" className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105" />
+              <img src="/static/Images/Barber3.jpg" alt="Sarah Lee" className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105" />
               <h3 className="text-xl mt-4 font-medium">Sarah Lee</h3>
               <p className="text-gray-600">Scalp Treatment Expert</p>
             </div>
@@ -54,7 +54,7 @@ const AboutUs = () => {
         <div className="max-w-4xl mx-auto lg:text-left">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
             <div className="flex-shrink-0">
-              <img src="/static/Images/boss.webp" alt="Alex Johnson" className="rounded-full w-48 h-48 mx-auto shadow-lg lg:w-64 lg:h-64" />
+              <img src="/static/Images/Boss.webp" alt="Alex Johnson" className="rounded-full w-48 h-48 mx-auto shadow-lg lg:w-64 lg:h-64" />
               <h3 className="text-xl mt-4 font-medium text-center lg:text-left">Alex Johnson</h3>
               <p className="text-gray-600 text-center">Founder @CoolCuts</p>
             </div>
