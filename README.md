@@ -52,7 +52,7 @@ python manage.py collectstatic --no-input'
 python manage.py runserver
 ```
 ## **Screenshots**  
-![Homepage](frontend/build/Images/screenShot1.png)
-![Book Appointment](frontend/build/Images/screenShot2.png)
-![Appointment List](frontend/build/Images/screenShot3.png)
+![Homepage](frontend/build/Images/ScreenShot1.png)
+![Book Appointment](frontend/build/Images/ScreenShot2.png)
+![Appointment List](frontend/build/Images/ScreenShot3.png)
 
