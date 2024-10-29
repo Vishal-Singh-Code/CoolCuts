@@ -15,7 +15,7 @@ const AppointmentList = () => {
         const fetchAppointments = async () => {
             try {
                 if (user) {
-                    const response = await axios.get('http://localhost:8000/api/appointments/');
+                    const response = await axios.get('/api/appointments/');
                     setAppointments(response.data);
                     setFilteredAppointments(response.data);
                 }
@@ -96,7 +96,7 @@ const AppointmentList = () => {
                     checklist: updatedChecklist,
                 };
 
-                const response = await axios.put(`http://localhost:8000/api/appointments/${appointmentId}/`, payload, {
+                const response = await axios.put(`/api/appointments/${appointmentId}/`, payload, {
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -141,7 +141,7 @@ const AppointmentList = () => {
                     status: updatedStatus,
                 };
 
-                const response = await axios.put(`http://localhost:8000/api/appointments/${appointmentId}/`, payload, {
+                const response = await axios.put(`/api/appointments/${appointmentId}/`, payload, {
                     headers: {
                         'Content-Type': 'application/json'
                     }

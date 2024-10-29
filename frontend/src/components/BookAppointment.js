@@ -25,7 +25,7 @@ const BookAppointment = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/services/');
+        const response = await axios.get('/api/services/');
         setServices(response.data);
       } catch (error) {
         console.error('Error fetching services:', error);
@@ -116,7 +116,7 @@ const BookAppointment = () => {
     }
 
     axios
-      .post('http://localhost:8000/api/appointments/', appointmentData)
+      .post('/api/appointments/', appointmentData)
       .then((response) => {
         console.log('Appointment booked successfully:', response.data);
         setAppointmentData({

@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0z1&*u(7p!*mxemb*bdv+k$or+0nm)houp(0ye$jp2=n)(mnj&'
+# SECRET_KEY = 'django-insecure-0z1&*u(7p!*mxemb*bdv+k$or+0nm)houp(0ye$jp2=n)(mnj&'
+SECRET_KEY = config("SECRET_KEY") 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DEBUG", cast=bool, default=False)  # Ensure to set it false in prod
 
-ALLOWED_HOSTS = ['127.0.0.1' , 'localhost']
+ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(",")  # Ensure this includes your render URL
 
 
 # Application definition
@@ -79,12 +82,18 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(config("DATABASE_URL"))
+    }
+
 
 
 # Password validation
@@ -137,15 +146,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
+# CORS_ALLOWED_ORIGINS = [
 
-    'http://localhost:3000',
-    "http://192.168.136.233:3000",
-    'http://127.0.0.1:8000',
-    'http://localhost:8000',
+#     'http://localhost:3000',
+#     "http://192.168.136.233:3000",
+#     'http://127.0.0.1:8000',
+#     'http://localhost:8000',
     
-]
-CORS_ALLOW_CREDENTIAL = True
+# ]
+# CORS_ALLOW_CREDENTIAL = True
 
 
 REST_FRAMEWORK = {
