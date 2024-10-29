@@ -11,7 +11,7 @@ const Home = () => {
       <section
         className="bg-cover bg-center h-screen"
         style={{
-          backgroundImage: "url('/Images/home.jpg')",
+          backgroundImage: "url('/static/Images/home.jpg')",
           paddingTop: "5rem",
           paddingBottom: "5rem" 
         }}
