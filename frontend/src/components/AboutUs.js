@@ -6,11 +6,11 @@ const AboutUs = () => {
   return (
     <div className="about-us">
       {/* Header Section */}
-      <div className="relative bg-cover bg-center h-[40rem] flex flex-col justify-center items-center text-center overflow-hidden" style={{ backgroundImage: "url('/static/images/about.jpg')" }}>
+      <div className="relative bg-cover bg-center h-[40rem] flex flex-col justify-center items-center text-center overflow-hidden" style={{ backgroundImage: "url('/static/Images/About.jpg')" }}>
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black opacity-60"></div>
         <div className="relative z-10 p-8 max-w-5xl mx-4 sm:mx-8 lg:mx-16">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4">About CoolCuts</h1>
-          <p className="text-xl sm:text-2xl text-gray-200 mb-6">Crafting Style, One Cut at a Time</p>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4"> CoolCuts</h1>
+          <p className="text-xl sm:text-2xl text-gray-200 mb-6">Where Precision Meets Perfection</p>
           <p className="text-base sm:text-lg text-gray-300">
             Welcome to our barbershop! We have been serving our community with top-notch grooming services for over a decade. Our mission is to provide exceptional haircuts and grooming experiences in a friendly and professional environment.
           </p>
