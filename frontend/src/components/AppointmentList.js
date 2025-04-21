@@ -3,7 +3,7 @@ import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
 import Filters from './Filters';
 import AppointmentCard from './AppointmentCard';
-
+import getCookie from '../services/csrf';
 
 const AppointmentList = () => {
     const [appointments, setAppointments] = useState([]);
@@ -15,7 +15,12 @@ const AppointmentList = () => {
         const fetchAppointments = async () => {
             try {
                 if (user) {
-                    const response = await axios.get('/api/appointments/');
+                    const response = await axios.get('/api/appointments/', {
+                        headers: {
+                          "X-CSRFToken": getCookie("csrftoken"),
+                        },
+                        withCredentials: true,
+                      });
                     setAppointments(response.data);
                     setFilteredAppointments(response.data);
                 }
@@ -98,8 +103,11 @@ const AppointmentList = () => {
 
                 const response = await axios.put(`/api/appointments/${appointmentId}/`, payload, {
                     headers: {
-                        'Content-Type': 'application/json'
-                    }
+                        'Content-Type': 'application/json',
+                        "X-CSRFToken": getCookie("csrftoken"),
+                    },
+                    withCredentials: true,
+
                 });
 
                 setAppointments(prevAppointments => prevAppointments.map(app => {
@@ -143,8 +151,10 @@ const AppointmentList = () => {
 
                 const response = await axios.put(`/api/appointments/${appointmentId}/`, payload, {
                     headers: {
-                        'Content-Type': 'application/json'
-                    }
+                        'Content-Type': 'application/json',
+                        "X-CSRFToken": getCookie("csrftoken"),
+                    },
+                    withCredentials: true,
                 });
 
                 setAppointments(prevAppointments => prevAppointments.map(app => {

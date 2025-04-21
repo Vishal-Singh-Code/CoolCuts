@@ -1,22 +1,7 @@
-# from django import forms
-# from .models import Appointment
-
-# class AppointmentForm(forms.ModelForm):
-#     class Meta:
-#         model = Appointment
-#         fields = ['customer_name', 'appointment_date', 'appointment_time', 'checklist']
-
-#     checklist = forms.CharField(widget=forms.HiddenInput(), required=False)
-
 from django import forms
 from .models import Appointment
-from django.utils import timezone
 from datetime import datetime, timedelta
 
-# TIME_CHOICES = [
-#     (datetime.strftime((datetime.min + timedelta(hours=h)).time(), '%I:%M %p'), datetime.strftime((datetime.min + timedelta(hours=h)).time(), '%I:%M %p'))
-#     for h in range(9, 21)
-# ]
 def generate_time_slots(start_time, end_time, slot_duration):
     time_slots = []
     current_time = start_time

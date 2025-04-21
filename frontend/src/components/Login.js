@@ -12,7 +12,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError(''); // Reset error state before submitting
+        setError(''); 
         try {
             const response = await api.login(username, password);
             login(response.data);

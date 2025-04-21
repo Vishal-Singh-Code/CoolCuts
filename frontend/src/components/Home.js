@@ -155,7 +155,7 @@ const services = [
 
 // Example gallery images
 const galleryImages = [
-  "https://th.bing.com/th/id/OIP.Uiv67eFiyZAoO6YES6HBiwAAAA?rs=1&pid=ImgDetMain",
+  "https://www.saltgrooming.com/cdn/shop/articles/haircut-clippers_54d401f5-2c6f-4064-a5f7-e3546f7860ea_1200x.png?v=1719220336",
   "https://i2.wp.com/www.hairstyle.org.in/wp-content/uploads/2017/04/Curly-Hairstyle-For-Men-In-2019.jpg?fit=629%2C955&ssl=1",
   "https://th.bing.com/th/id/R.25e40d99c141045355f0c549014d6adb?rik=Ai3d3Ao86ESZmQ&riu=http%3a%2f%2fcoolmenshair.com%2fwp-content%2fuploads%2ffaux-hawk-hairstyle-3.jpg&ehk=LKFUrBkT7cixYfktFrqSSqzOoIWub4%2biAZcpm2%2biEg0%3d&risl=&pid=ImgRaw&r=0",
   "https://th.bing.com/th/id/R.3f9dd672c41c481d7a01dce3f6174260?rik=j5MQ%2b4kTlOGdFA&riu=http%3a%2f%2fwww.mens-hairstyle.com%2fwp-content%2fuploads%2f2017%2f05%2fBest-Hairstyle-for-Men.jpg&ehk=kmc5%2fWhiyh4IquyKFzUqX6x1iqG0ZU8hXbuAzoz5Cao%3d&risl=&pid=ImgRaw&r=0"

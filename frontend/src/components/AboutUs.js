@@ -1,18 +1,29 @@
-import React from 'react';
-import { Logo } from './Icons.js';
+import React from "react";
+import { Logo } from "./Icons.js";
 import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
     <div className="about-us">
       {/* Header Section */}
-      <div className="relative bg-cover bg-center h-[40rem] flex flex-col justify-center items-center text-center overflow-hidden" style={{ backgroundImage: "url('/static/Images/About.jpg')" }}>
+      <div
+        className="relative bg-cover bg-center h-[40rem] flex flex-col justify-center items-center text-center overflow-hidden"
+        style={{ backgroundImage: "url('/static/Images/About.jpg')" }}
+      >
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black opacity-60"></div>
         <div className="relative z-10 p-8 max-w-5xl mx-4 sm:mx-8 lg:mx-16">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4"> CoolCuts</h1>
-          <p className="text-xl sm:text-2xl text-gray-200 mb-6">Where Precision Meets Perfection</p>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4">
+            {" "}
+            CoolCuts
+          </h1>
+          <p className="text-xl sm:text-2xl text-gray-200 mb-6">
+            Where Precision Meets Perfection
+          </p>
           <p className="text-base sm:text-lg text-gray-300">
-            Welcome to our barbershop! We have been serving our community with top-notch grooming services for over a decade. Our mission is to provide exceptional haircuts and grooming experiences in a friendly and professional environment.
+            Welcome to our barbershop! We have been serving our community with
+            top-notch grooming services for over a decade. Our mission is to
+            provide exceptional haircuts and grooming experiences in a friendly
+            and professional environment.
           </p>
         </div>
       </div>
@@ -20,48 +31,74 @@ const AboutUs = () => {
       {/* Meet the Team Section */}
       <div className="py-16 px-4 md:px-8 lg:px-16">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-semibold mb-10 flex justify-center items-center">Meet the Team</h2>
+          <h2 className="text-4xl font-semibold mb-10 flex justify-center items-center">
+            Meet the Team
+          </h2>
           <div className="flex flex-wrap justify-center gap-12">
-            {/* Example team member */}
             <div className="w-full sm:w-60 text-center">
-              <img src="/static/Images/Barber.png" alt="John Doe" className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105" />
+              <img
+                src="/static/Images/Barber.png"
+                alt="John Doe"
+                className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105"
+              />
               <h3 className="text-xl mt-4 font-medium">John Doe</h3>
               <p className="text-gray-600">Master Barber</p>
             </div>
             <div className="w-full sm:w-60 text-center">
-              <img src="/static/Images/Barbar1.png" alt="Jane Smith" className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105" />
+              <img
+                src="/static/Images/Barbar1.png"
+                alt="Jane Smith"
+                className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105"
+              />
               <h3 className="text-xl mt-4 font-medium">Jane Smith</h3>
               <p className="text-gray-600">Senior Stylist</p>
             </div>
             <div className="w-full sm:w-60 text-center">
-              <img src="/static/Images/Barber2.png" alt="Mike Johnson" className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105" />
+              <img
+                src="/static/Images/Barber2.png"
+                alt="Mike Johnson"
+                className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105"
+              />
               <h3 className="text-xl mt-4 font-medium">Mike Johnson</h3>
               <p className="text-gray-600">Color Specialist</p>
             </div>
             <div className="w-full sm:w-60 text-center">
-              <img src="/static/Images/Barber3.jpg" alt="Sarah Lee" className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105" />
+              <img
+                src="/static/Images/Barber3.jpg"
+                alt="Sarah Lee"
+                className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105"
+              />
               <h3 className="text-xl mt-4 font-medium">Sarah Lee</h3>
               <p className="text-gray-600">Scalp Treatment Expert</p>
             </div>
-            {/* Add more team members similarly */}
           </div>
         </div>
       </div>
-
 
       {/* Owner Section */}
       <div className="py-16 px-4 md:px-8 lg:px-16 bg-gray-100">
         <div className="max-w-4xl mx-auto lg:text-left">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
             <div className="flex-shrink-0">
-              <img src="/static/Images/Boss.webp" alt="Alex Johnson" className="rounded-full w-48 h-48 mx-auto shadow-lg lg:w-64 lg:h-64" />
-              <h3 className="text-xl mt-4 font-medium text-center lg:text-left">Alex Johnson</h3>
+              <img
+                src="/static/Images/Boss.webp"
+                alt="Alex Johnson"
+                className="rounded-full w-48 h-48 mx-auto shadow-lg lg:w-64 lg:h-64"
+              />
+              <h3 className="text-xl mt-4 font-medium text-center lg:text-left">
+                Alex Johnson
+              </h3>
               <p className="text-gray-600 text-center">Founder @CoolCuts</p>
             </div>
             <div className="text-center lg:text-left">
               <h3 className="text-xl mt-4 font-medium">About Owner</h3>
               <p className="text-gray-600 mt-4">
-                Alex founded the barbershop with a vision to create a space where customers can enjoy top-notch grooming services in a friendly and professional environment. With over 20 years of experience in the industry, Alex is passionate about delivering exceptional service and building lasting relationships with clients.
+                Alex founded the barbershop with a vision to create a space
+                where customers can enjoy top-notch grooming services in a
+                friendly and professional environment. With over 20 years of
+                experience in the industry, Alex is passionate about delivering
+                exceptional service and building lasting relationships with
+                clients.
               </p>
             </div>
           </div>
@@ -70,7 +107,10 @@ const AboutUs = () => {
 
       <footer className="bg-gray-900 text-gray-300 body-font">
         <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-          <Link to="/" className="flex title-font font-medium items-center md:justify-start justify-center">
+          <Link
+            to="/"
+            className="flex title-font font-medium items-center md:justify-start justify-center"
+          >
             <Logo />
             <span className="ml-3 text-xl pt-3">Salon</span>
           </Link>
@@ -168,7 +208,6 @@ const AboutUs = () => {
           </span>
         </div>
       </footer>
-
     </div>
   );
 };

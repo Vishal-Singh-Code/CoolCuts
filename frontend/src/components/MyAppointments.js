@@ -16,8 +16,8 @@ const MyAppointment = () => {
       if (!user) return;
 
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/user/appointments/', {
-          params: { user_id: user.id } // Assuming you can pass user ID as a query parameter
+        const response = await axios.get('/api/user/appointments/', {
+          params: { user_id: user.id } 
         });
         // Sort appointments by booking_time in descending order
         const sortedAppointments = response.data.sort((a, b) => new Date(b.booking_time) - new Date(a.booking_time));
@@ -100,12 +100,11 @@ const MyAppointment = () => {
           <p><strong>Customer:</strong> {capitalizeName(selectedAppointment.customer_name)}</p>
           <p><strong>Date:</strong> {formatDate(selectedAppointment.appointment_date)}</p>
           <p><strong>Time:</strong> {selectedAppointment.appointment_time}</p>
-          {/* <p><strong>Booking Time:</strong> {formatDateTime(selectedAppointment.booking_time)}</p> */}
           <p><strong>Status:</strong> {selectedAppointment.status}</p>
           <p><strong>Checklist:</strong></p>
           <ul className='list-disc pl-5'>
             {selectedAppointment.checklist.map((item, index) => (
-              <li key={index}>{item.text.name}</li>
+              <li key={index}>{item?.text}</li>
             ))}
           </ul>
         </Modal>

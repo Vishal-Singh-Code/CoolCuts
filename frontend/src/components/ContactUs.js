@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Logo } from './Icons.js';
 import { Link } from "react-router-dom";
+import getCookie from '../services/csrf.js';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +23,12 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/contact/', formData);
+      const response = await axios.post('/api/contact/', formData,{
+        headers: {
+          "X-CSRFToken": getCookie("csrftoken"),
+        },
+        withCredentials: true,
+      });
       setStatus({ type: 'success', message: response.data.message });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {

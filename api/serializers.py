@@ -2,8 +2,6 @@ from rest_framework import serializers
 from .models import Appointment , Service
 from datetime import datetime 
 
-
-
 class AppointmentSerializer(serializers.ModelSerializer):
     checklist = serializers.JSONField(required=False)
     appointment_time = serializers.CharField() 

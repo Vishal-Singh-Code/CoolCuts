@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Logo } from "./Icons.js";
-import { AuthContext } from "../context/AuthContext"; // Make sure to import your AuthContext
+import { AuthContext } from "../context/AuthContext";  
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useContext(AuthContext);
-  const navigate = useNavigate(); // Use context to get user and logout function
+  const navigate = useNavigate(); 
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -27,9 +27,9 @@ const Navbar = () => {
   }
 
   const handleLogout = () => {
-    logout(); // Call your logout function
-    closeMenu(); // Close the menu if needed
-    navigate('/'); // Redirect to the home page
+    logout(); 
+    closeMenu(); 
+    navigate('/');
   };
 
   return (
@@ -67,7 +67,7 @@ const Navbar = () => {
               `block md:inline-block p-2 md:mt-0 mr-5 text-xl md:text-xl hover:text-teal-400 ${isActive ? 'text-teal-400' : 'text-white'
               }`
             }
-            onClick={closeMenu} // Close menu on click
+            onClick={closeMenu} 
           >
             Home
           </NavLink>
@@ -78,7 +78,7 @@ const Navbar = () => {
               `block md:inline-block p-2 md:mt-0 mr-5 text-xl md:text-xl hover:text-teal-400 ${isActive ? 'text-teal-400' : 'text-white'
               }`
             }
-            onClick={closeMenu} // Close menu on click
+            onClick={closeMenu} 
           >
             Services
           </NavLink>
@@ -89,7 +89,7 @@ const Navbar = () => {
               `block md:inline-block p-2 md:mt-0 mr-5 text-xl md:text-xl hover:text-teal-400 ${isActive ? 'text-teal-400' : 'text-white'
               }`
             }
-            onClick={closeMenu} // Close menu on click
+            onClick={closeMenu}
           >
             Book Appointment
           </NavLink>
@@ -101,7 +101,7 @@ const Navbar = () => {
                 `block md:inline-block p-2 md:mt-0 mr-5 text-xl md:text-xl hover:text-teal-400 ${isActive ? 'text-teal-400' : 'text-white'
                 }`
               }
-              onClick={closeMenu} // Close menu on click
+              onClick={closeMenu} 
             >
               {b}
             </NavLink>
@@ -115,7 +115,7 @@ const Navbar = () => {
                   `block md:inline-block p-2 md:mt-0 mr-5 text-xl md:text-xl hover:text-teal-400 ${isActive ? 'text-teal-400' : 'text-white'
                   }`
                 }
-                onClick={closeMenu} // Close menu on click
+                onClick={closeMenu} 
               >
                 About Us
               </NavLink>
@@ -126,7 +126,7 @@ const Navbar = () => {
                   `block md:inline-block p-2 md:mt-0 mr-5 text-xl md:text-xl hover:text-teal-400 ${isActive ? 'text-teal-400' : 'text-white'
                   }`
                 }
-                onClick={closeMenu} // Close menu on click
+                onClick={closeMenu}
               >
                 Contact Us
               </NavLink>
@@ -140,7 +140,7 @@ const Navbar = () => {
                 `block md:inline-block p-2 md:mt-0 mr-5 text-xl md:text-xl hover:text-teal-400 ${isActive ? 'text-teal-400' : 'text-white'
                 }`
               }
-              onClick={closeMenu} // Close menu on click
+              onClick={closeMenu} 
             >
               Admin Panel
             </NavLink>
@@ -151,14 +151,14 @@ const Navbar = () => {
               <Link
                 className="block md:inline-block p-2 md:mt-0 mr-5 hover:text-violet-400 text-white text-xl md:text-xl"
                 to="/login"
-                onClick={closeMenu} // Close menu on click
+                onClick={closeMenu} 
               >
                 Login
               </Link>
               <Link
                 className="block md:inline-block p-2 md:mt-0 mr-5 hover:text-violet-400 text-white text-xl md:text-xl"
                 to="/signup"
-                onClick={closeMenu} // Close menu on click
+                onClick={closeMenu} 
               >
                 Signup
               </Link>

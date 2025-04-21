@@ -11,7 +11,7 @@ const Signup = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setError('');  // Clear any previous errors
+        setError('');  
 
         api.register(username, email, password)
             .then(response => {

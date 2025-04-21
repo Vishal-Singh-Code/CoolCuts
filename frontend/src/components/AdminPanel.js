@@ -140,7 +140,6 @@ const AdminPanel = () => {
         <table className="min-w-full bg-white rounded-lg shadow-md">
           <thead className="bg-gray-100 text-gray-600">
             <tr>
-              {/* <th className="py-2 px-4 border-b">ID</th> */}
               <th className="py-2 px-3 lg:px-4 border-b text-lg">Name</th>
               <th className="py-2 px-3 lg:px-4 border-b text-lg">Price</th>
               <th className="py-2 px-3 lg:px-4 border-b text-lg">Actions</th>
@@ -149,7 +148,6 @@ const AdminPanel = () => {
           <tbody>
             {services.map(service => (
               <tr key={service.id}>
-                {/* <td className="py-2 px-4 border-b">{service.id}</td> */}
                 <td className="py-2 px-3 lg:px-4 border-b">{service.name}</td>
                 <td className="py-2 px-3 lg:px-4 border-b">{service.price}</td>
                 <td className="py-2 px-3 lg:px-4 border-b">
