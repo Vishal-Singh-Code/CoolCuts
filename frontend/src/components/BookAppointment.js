@@ -67,12 +67,13 @@ const BookAppointment = () => {
 
   const handleChecklistChange = (service) => {
     setAppointmentData((prevData) => {
-      const checklist = prevData.checklist.some((item) => item.text === service.name)
-        ? prevData.checklist.filter((item) => item.text !== service.name)
-        : [...prevData.checklist, { text: service.name, done: false }];
+      const checklist = prevData.checklist.some((item) => item.text.id === service.id)
+        ? prevData.checklist.filter((item) => item.text.id !== service.id)
+        : [...prevData.checklist, { text: service, done: false }];
       return { ...prevData, checklist };
     });
   };
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -247,7 +248,7 @@ const BookAppointment = () => {
                     <input
                       type="checkbox"
                       id={service.id}
-                      checked={appointmentData.checklist.some((item) => item.text === service.name)}
+                      checked={appointmentData.checklist.some((item) => item.text.id === service.id)}
                       onChange={() => handleChecklistChange(service)}
                       className="form-checkbox text-teal-600 h-5 w-5 rounded"
                     />

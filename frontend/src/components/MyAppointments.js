@@ -104,7 +104,7 @@ const MyAppointment = () => {
           <p><strong>Checklist:</strong></p>
           <ul className='list-disc pl-5'>
             {selectedAppointment.checklist.map((item, index) => (
-              <li key={index}>{item?.text}</li>
+              <li key={index}>{item?.text?.name}</li>
             ))}
           </ul>
         </Modal>

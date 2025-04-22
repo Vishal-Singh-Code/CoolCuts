@@ -19,6 +19,7 @@ const AppointmentChecklist = ({ appointment, toggleChecklistItemStatus }) => {
                         />
                         <span className={item.done ? "line-through text-gray-500" : "text-gray-700"}>
                             {item.text.name}
+                            {console.log(item.text)}
                         </span>
                     </li>
                 ))}
