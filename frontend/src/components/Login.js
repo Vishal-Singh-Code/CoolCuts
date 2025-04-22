@@ -58,7 +58,7 @@ const Login = () => {
                     <div className="text-center mb-6">
                         <img
                             className="mx-auto h-12 w-auto mb-4 "
-                            src="/static/images/logo.svg"
+                            src="/static/Images/logo.svg"
                             alt="Your Barbershop"
                         />
                         <h2 className="text-3xl font-extrabold text-gray-900">Welcome Back!</h2>

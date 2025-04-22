@@ -37,7 +37,7 @@ const AboutUs = () => {
           <div className="flex flex-wrap justify-center gap-12">
             <div className="w-full sm:w-60 text-center">
               <img
-                src="/static/Images/Barber.png"
+                src="/static/Images/barber.png"
                 alt="John Doe"
                 className="rounded-full w-40 h-40 mx-auto shadow-lg transition-transform transform hover:scale-105"
               />
