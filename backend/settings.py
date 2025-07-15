@@ -5,13 +5,12 @@ from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECRET_KEY = 'django-insecure-0z1&*u(7p!*mxemb*bdv+k$or+0nm)houp(0ye$jp2=n)(mnj&'
 SECRET_KEY = config("SECRET_KEY") 
 
 DEBUG = config("DEBUG", cast=bool, default=False) 
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(",")
-CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS").split(",")
+# CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS").split(",")
 
 # Application definition
 
