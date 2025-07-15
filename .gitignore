@@ -1,1 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
 .env
+*.log
+*.pid
+
+
+# Virtual environments
+myenv/
+
+# VSCode and OS junk
+.vscode/
+.DS_Store
+Thumbs.db
+
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React - ignore only dependencies
+frontend/node_modules/
+
+
+# Pytest and test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Django migrations cache (not the actual migration files)
+**/migrations/__pycache__/
+**/migrations/*.pyc

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import { Logo } from './Icons.js';
+import { Logo } from '../components/Icons.js';
 import { Link } from "react-router-dom";
 import getCookie from '../services/csrf.js';
 
@@ -37,9 +37,10 @@ const ContactUs = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="bg-gray-100 py-16 mt-2">
         <section className="text-gray-600 body-font relative">
+
           {/* Map Section */}
           <div className="w-full bg-white shadow-lg rounded-lg overflow-hidden p-0 mb-10">
             <iframe
@@ -57,6 +58,7 @@ const ContactUs = () => {
           {/* Contact Details and Form */}
           <div className="container ">
             <div className="bg-white shadow-lg rounded-lg p-8 flex flex-col lg:flex-row">
+
               {/* Contact Details */}
               <div className="lg:w-1/2 w-full lg:pr-6 mb-6 lg:mb-0">
                 <h2 className="text-gray-900 text-3xl mb-4 font-bold title-font">
@@ -168,11 +170,14 @@ const ContactUs = () => {
                   )}
                 </form>
               </div>
+
             </div>
           </div>
+          
         </section>
-
       </div>
+
+      {/* footer section */}
       <footer className="bg-gray-900 text-gray-300 body-font">
         <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <Link to="/" className="flex title-font font-medium items-center md:justify-start justify-center">
@@ -274,8 +279,7 @@ const ContactUs = () => {
         </div>
       </footer>
 
-    </div>
-
+    </>
   );
 };
 

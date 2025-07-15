@@ -1,21 +1,26 @@
-import './App.css';
-import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import MaybeShowNavbar from './components/MaybeShowNavbar';
-import Home from './components/Home';
-import Service from './components/Services';
-import BookAppointment from './components/BookAppointment';
-import MyAppointment from './components/MyAppointments';
-import AppointmentList from './components/AppointmentList';
-import AdminPanel from './components/AdminPanel';
-import AboutUs from './components/AboutUs';
-import ContactUs from './components/ContactUs';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import Logout from './components/Logout';
-import { AuthProvider } from './context/AuthContext';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoadingScreen from './components/LoadingScreen';
+import "./App.css";
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// components
+import LoadingScreen from "./components/LoadingScreen";
+import Navbar from "./components/Navbar";
+import MaybeShowNavbar from "./components/MaybeShowNavbar";
+import Logout from "./components/Logout";
+
+// pages
+import Home from "./pages/Home";
+import Service from "./pages/Services";
+import BookAppointment from "./pages/BookAppointment";
+import MyAppointment from "./pages/MyAppointments";
+import AppointmentList from "./pages/AppointmentList";
+import ContactUs from "./pages/ContactUs";
+import AboutUs from "./pages/AboutUs";
+import AdminPanel from "./pages/AdminPanel";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+
+import { AuthProvider } from "./context/AuthContext";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,17 +28,13 @@ const App = () => {
   useEffect(() => {
     const handleLoad = () => setIsLoading(false);
 
-    // If document is already loaded
-    if (document.readyState === 'complete') {
+    if (document.readyState === "complete") {
       handleLoad();
     } else {
-      // Otherwise, set up event listener
-      window.addEventListener('load', handleLoad);
+      window.addEventListener("load", handleLoad);
     }
-
-    // Clean up event listener
     return () => {
-      window.removeEventListener('load', handleLoad);
+      window.removeEventListener("load", handleLoad);
     };
   }, []);
 
@@ -45,7 +46,11 @@ const App = () => {
           <MaybeShowNavbar>
             <Navbar />
           </MaybeShowNavbar>
-          <div className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+          <div
+            className={`transition-opacity duration-500 ${
+              isLoading ? "opacity-0" : "opacity-100"
+            }`}
+          >
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Service />} />
@@ -64,6 +69,6 @@ const App = () => {
       </AuthProvider>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,57 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import { getServices, createService, updateService, deleteService } from '../services/apiService';
+import { useEffect, useState } from "react";
+import {
+  getServices,
+  createService,
+  updateService,
+  deleteService,
+} from "../services/apiService";
+
 
 const AdminPanel = () => {
   const [services, setServices] = useState([]);
-  const [newService, setNewService] = useState({ name: '', price: '' });
+  const [newService, setNewService] = useState({ name: "", price: "" });
   const [editingService, setEditingService] = useState(null);
 
   useEffect(() => {
     fetchServices();
   }, []);
 
-  const fetchServices = () => {
-    getServices()
-      .then(response => {
-        setServices(response.data);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the services!', error);
-      });
+  const fetchServices = async () => {
+    try {
+      const response = await getServices();
+      setServices(response.data);
+    } catch (error) {
+      console.error("There was an error fetching the services!", error);
+    }
   };
 
   const handleCreateService = () => {
     createService(newService)
-      .then(response => {
+      .then((response) => {
         setServices([...services, response.data]);
-        setNewService({ name: '', price: '' });
+        setNewService({ name: "", price: "" });
       })
-      .catch(error => {
-        console.error('There was an error creating the service!', error);
+      .catch((error) => {
+        console.error("There was an error creating the service!", error);
       });
   };
 
   const handleUpdateService = () => {
     updateService(editingService.id, editingService)
-      .then(response => {
-        const updatedServices = services.map(service =>
+      .then((response) => {
+        const updatedServices = services.map((service) =>
           service.id === editingService.id ? response.data : service
         );
         setServices(updatedServices);
         setEditingService(null);
       })
-      .catch(error => {
-        console.error('There was an error updating the service!', error);
+      .catch((error) => {
+        console.error("There was an error updating the service!", error);
       });
   };
 
   const handleDeleteService = (id) => {
     deleteService(id)
       .then(() => {
-        setServices(services.filter(service => service.id !== id));
+        setServices(services.filter((service) => service.id !== id));
       })
-      .catch(error => {
-        console.error('There was an error deleting the service!', error);
+      .catch((error) => {
+        console.error("There was an error deleting the service!", error);
       });
   };
 
@@ -67,11 +72,16 @@ const AdminPanel = () => {
 
   return (
     <div className="container mx-auto mt-24 px-4 ">
-      <h1 className="text-center text-black-400 mb-5 text-4xl font-bold">Services</h1>
+
+      <h1 className="text-center text-black-400 mb-5 text-4xl font-bold">
+        Services
+      </h1>
 
       {/* Add New Service */}
       <div className="mb-5">
-        <h2 className="text-gray-600 text-2xl font-semibold mb-3">Add New Service</h2>
+        <h2 className="text-gray-600 text-2xl font-semibold mb-3">
+          Add New Service
+        </h2>
         <div className="flex flex-wrap space-y-2 sm:space-y-2 sm:space-x-2 ">
           <input
             type="text"
@@ -101,7 +111,9 @@ const AdminPanel = () => {
       {/* Edit Service */}
       {editingService && (
         <div className="mb-5">
-          <h2 className="text-gray-600 text-2xl font-semibold mb-3">Edit Service</h2>
+          <h2 className="text-gray-600 text-2xl font-semibold mb-3">
+            Edit Service
+          </h2>
           <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-2 ">
             <input
               type="text"
@@ -146,7 +158,7 @@ const AdminPanel = () => {
             </tr>
           </thead>
           <tbody>
-            {services.map(service => (
+            {services.map((service) => (
               <tr key={service.id}>
                 <td className="py-2 px-3 lg:px-4 border-b">{service.name}</td>
                 <td className="py-2 px-3 lg:px-4 border-b">{service.price}</td>
@@ -169,6 +181,7 @@ const AdminPanel = () => {
           </tbody>
         </table>
       </div>
+
     </div>
   );
 };

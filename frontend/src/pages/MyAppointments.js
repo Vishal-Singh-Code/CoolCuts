@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
-import Modal from './Modal';
+import Modal from '../components/Modal';
 
 const MyAppointment = () => {
   const [appointments, setAppointments] = useState([]);

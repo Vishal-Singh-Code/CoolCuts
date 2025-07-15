@@ -1,12 +1,11 @@
-import React from "react";
-import { Logo } from "./Icons.js";
+import { Logo } from "../components/Icons";
 import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
     <div className="about-us">
       {/* Header Section */}
-      <div
+      <section
         className="relative bg-cover bg-center h-[40rem] flex flex-col justify-center items-center text-center overflow-hidden"
         style={{ backgroundImage: "url('/static/Images/About.jpg')" }}
       >
@@ -26,10 +25,10 @@ const AboutUs = () => {
             and professional environment.
           </p>
         </div>
-      </div>
+      </section>
 
       {/* Meet the Team Section */}
-      <div className="py-16 px-4 md:px-8 lg:px-16">
+      <section className="py-16 px-4 md:px-8 lg:px-16">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl font-semibold mb-10 flex justify-center items-center">
             Meet the Team
@@ -73,10 +72,10 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Owner Section */}
-      <div className="py-16 px-4 md:px-8 lg:px-16 bg-gray-100">
+      <section className="py-16 px-4 md:px-8 lg:px-16 bg-gray-100">
         <div className="max-w-4xl mx-auto lg:text-left">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
             <div className="flex-shrink-0">
@@ -103,8 +102,9 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
+      {/* footer Section */}
       <footer className="bg-gray-900 text-gray-300 body-font">
         <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <Link

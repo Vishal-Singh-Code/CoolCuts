@@ -1,7 +1,9 @@
-import React from 'react';
-
 const AppointmentChecklist = ({ appointment, toggleChecklistItemStatus }) => {
-    if (!appointment.checklist || !Array.isArray(appointment.checklist) || appointment.checklist.length === 0) {
+    if (
+        !appointment.checklist ||
+        !Array.isArray(appointment.checklist) ||
+        appointment.checklist.length === 0
+    ) {
         return <p className="text-gray-700 mt-2">No checklist items</p>;
     }
 
@@ -17,9 +19,12 @@ const AppointmentChecklist = ({ appointment, toggleChecklistItemStatus }) => {
                             onChange={() => toggleChecklistItemStatus(appointment.id, index)}
                             className="mr-2"
                         />
-                        <span className={item.done ? "line-through text-gray-500" : "text-gray-700"}>
+                        <span
+                            className={
+                                item.done ? "line-through text-gray-500" : "text-gray-700"
+                            }
+                        >
                             {item.text.name}
-                            {console.log(item.text)}
                         </span>
                     </li>
                 ))}

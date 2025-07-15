@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Appointment , Service
+from .models import Appointment , Service, ContactForm
 from datetime import datetime 
 
 class AppointmentSerializer(serializers.ModelSerializer):
@@ -22,9 +22,6 @@ class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
         fields = ['id', 'name', 'price']
-
-
-from .models import ContactForm
 
 class ContactFormSerializer(serializers.ModelSerializer):
     class Meta:

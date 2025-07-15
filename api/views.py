@@ -1,10 +1,11 @@
 from rest_framework import generics
 from .models import Appointment ,Service
-from .serializers import AppointmentSerializer , ServiceSerializer
+from .serializers import AppointmentSerializer , ServiceSerializer, ContactFormSerializer
 from rest_framework.exceptions import ValidationError
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 
 class AppointmentListView(generics.ListCreateAPIView):
@@ -19,7 +20,6 @@ class AppointmentListView(generics.ListCreateAPIView):
             raise ValidationError('This time slot is already booked.')
 
         serializer.save()
-
 class AppointmentDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
@@ -42,16 +42,9 @@ class AppointmentHistoryView(APIView):
         appointments = Appointment.objects.filter(user_id=user_id)
         serializer = AppointmentSerializer(appointments, many=True)
         return Response(serializer.data)
-
 class ServiceViewSet(viewsets.ModelViewSet):
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
-
-# views.py
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
-from .serializers import ContactFormSerializer
 
 @api_view(['POST'])
 def contact_form(request):

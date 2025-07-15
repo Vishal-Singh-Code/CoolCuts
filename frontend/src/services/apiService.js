@@ -1,16 +1,22 @@
 import axios from 'axios';
 import getCookie from './csrf';
 
-const csrfToken = getCookie('csrftoken');
-
 const axiosInstance = axios.create({
   baseURL: '/api/services/',
   headers: {
     'Content-Type': 'application/json',
-    'X-CSRFToken': csrfToken, 
   },
-  withCredentials: true, 
+  withCredentials: true,
 });
+
+// Automatically attach the latest CSRF token
+axiosInstance.interceptors.request.use(
+  (config) => {
+    config.headers['X-CSRFToken'] = getCookie('csrftoken');
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
 
 const getServices = () => axiosInstance.get('/');
 const createService = (service) => axiosInstance.post('/', service);

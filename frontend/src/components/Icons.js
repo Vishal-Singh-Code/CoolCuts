@@ -1,5 +1,3 @@
-import React from "react";
-
 // Hair Cutting SVG
 export const HairCuttingIcon = () => (
   <svg

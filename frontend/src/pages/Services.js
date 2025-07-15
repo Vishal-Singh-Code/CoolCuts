@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Logo } from './Icons.js';
+import { Logo } from '../components/Icons';
 import '../styles/styles.css';
 
 const Service = () => {

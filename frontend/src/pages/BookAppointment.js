@@ -1,9 +1,9 @@
 import "../styles/styles.css";
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import BookingModal from "./BookingModal";
+import BookingModal from "../components/BookingModal";
 import getCookie from "../services/csrf";
 
 
@@ -122,7 +122,6 @@ const BookAppointment = () => {
         withCredentials: true,
       })
       .then((response) => {
-        console.log("Appointment booked successfully:", response.data);
         setAppointmentData({
           user: user ? user.id : "",
           customer_name: "",
@@ -143,7 +142,8 @@ const BookAppointment = () => {
   const minDate = new Date().toISOString().split("T")[0];
 
   return (
-    <div>
+    
+    <>
       <BookingModal
         isOpen={isModalOpen}
         onClose={() => {
@@ -153,6 +153,7 @@ const BookAppointment = () => {
         message="Appointment has been booked successfully!"
       />
 
+      {/* nav bar */}
       <ul style={{ backgroundColor: "#121212" }} className="flex items-center justify-between bg-gray-800 p-3">
         <li>
           <button className="text-white text-xl flex items-center" onClick={() => navigate(-1)}>
@@ -172,6 +173,7 @@ const BookAppointment = () => {
       </ul>
 
       <div className="bg-gray-200 p-4">
+        {/* Booking Form */}
         <form className="mx-auto max-w-lg bg-white shadow-lg rounded-lg p-8" onSubmit={handleSubmit}>
           <h2 className="text-4xl font-bold text-black-400 mb-6">Book Appointment</h2>
 
@@ -268,9 +270,11 @@ const BookAppointment = () => {
               Book Appointment
             </button>
           </div>
+
         </form>
+
       </div>
-    </div>
+    </>
   );
 };
 
