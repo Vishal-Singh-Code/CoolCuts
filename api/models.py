@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+
 class Appointment(models.Model):
     STATUS_CHOICES = [
         ('pending', 'Pending'),
@@ -17,12 +18,14 @@ class Appointment(models.Model):
 
     def __str__(self):
         return f"{self.customer_name} - {self.appointment_date} at {self.appointment_time}"
+    
 class Service(models.Model):
     name = models.CharField(max_length=100)
     price = models.IntegerField()
     
     def __str__(self):
         return self.name
+    
 class ContactForm(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()

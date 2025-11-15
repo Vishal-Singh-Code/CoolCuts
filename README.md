@@ -51,8 +51,5 @@ Collect static files and start the Django server:
 python manage.py collectstatic --no-input'
 python manage.py runserver
 ```
-## **Screenshots**  
-![Homepage](frontend/build/Images/ScreenShot1.png)
-![Book Appointment](frontend/build/Images/ScreenShot2.png)
-![Appointment List](frontend/build/Images/ScreenShot3.png)
+
 
