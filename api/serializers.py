@@ -8,22 +8,32 @@ class AppointmentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Appointment
-        fields = ['id', 'user', 'customer_name', 'appointment_date', 'appointment_time', 'checklist' , 'status' , 'booking_time']
-    
+        fields = [
+            'id', 'customer_name','phone', 'appointment_date',
+            'appointment_time', 'checklist', 'status', 'booking_time'
+        ]
+        read_only_fields = ['customer_name']
+
+
     def validate_appointment_time(self, value):
         try:
-            # Convert 12-hour format with AM/PM to 24-hour format
-            time_obj = datetime.strptime(value, '%I:%M %p').time()
+            return datetime.strptime(value, '%I:%M %p').time()
         except ValueError:
             raise serializers.ValidationError("Time has wrong format. Use 'HH:MM AM/PM'.")
-        return time_obj
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data['appointment_time'] = instance.appointment_time.strftime("%I:%M %p")
+        return data
+
 
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
         fields = ['id', 'name', 'price']
 
+
 class ContactFormSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactForm
-        fields = ['name', 'email', 'subject', 'message' ,'created_at']
+        fields = ['name', 'email', 'subject', 'message', 'created_at']

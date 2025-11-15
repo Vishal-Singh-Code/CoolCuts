@@ -8,6 +8,7 @@ class Appointment(models.Model):
     ]
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     customer_name = models.CharField(max_length=100, null=True, blank=True)
+    phone = models.CharField(max_length=10, null=True, blank=True)
     appointment_date = models.DateField()
     appointment_time = models.TimeField()
     booking_time = models.DateTimeField(default=timezone.now) 
